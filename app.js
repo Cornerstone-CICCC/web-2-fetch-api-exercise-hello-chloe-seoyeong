@@ -1,4 +1,5 @@
 // YOUR JS CODE HERE
+const weatherBox = document.querySelector('.current-weather');
 const temperature = document.querySelector('.current-weather__temperature');
 const wind = document.querySelector('.current-weather__wind');
 const zone = document = document.querySelector('.current-weather__location');
@@ -18,11 +19,16 @@ const getWeatherData = async () => {
 const putWeatherInfo = async () => {
   try {
     const info = await getWeatherData();
+
     temperature.textContent = `${info.current.temperature_2m} ${info.current_units.temperature_2m}`;
     wind.textContent = `${info.current.wind_speed_10m} ${info.current_units.wind_speed_10m}`;
     zone.textContent = info.timezone;
     const time = new Date(info.current.time);
     day.textContent = time.toLocaleString('en-US');
+
+    if(info.current.is_day === 0) {
+      weatherBox.classList.add('night')
+    }
 
   } catch(err) {
     console.error(err);

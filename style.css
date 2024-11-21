@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Lexend:wght@100..900&display=swap');
+
+.current-weather {
+  font-family: "Lexend", sans-serif;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.current-weather.night {
+  background-color: #070707;
+  color: #fff;
+}
