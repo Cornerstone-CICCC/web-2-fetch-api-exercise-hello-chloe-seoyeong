@@ -36,3 +36,6 @@ const putWeatherInfo = async () => {
 }
 
 putWeatherInfo();
+setInterval(() => {
+  putWeatherInfo();
+}, 10 * 60 * 1000);
